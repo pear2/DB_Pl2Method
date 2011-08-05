@@ -1,0 +1,24 @@
+This package was port to PEAR2 to add the benefits of good distribution
+and great enviroment.
+
+This package make stored procedures from PostgreSQL and others SGDB
+can used as PHP Methods.
+You have PDOStatement as answer like in this sample:
+  
+  -- in database dev
+  create or replace function teste() returns varchar(10) as
+	$$
+	begin
+	return 'teste';
+	end;
+	$$
+	language 'plpgsql';
+
+$a =  new PDO("pgsql:host=localhost;port=5432;dbname=dev;user=postgres;password=root");
+$pl2method = \PEAR2\DB\Pl2Method\Pl2Method::getInstance($a);
+
+here you have a PDOStatement
+$returned = $pl2method->public->teste();
+var_dump( $returned );
+ and You can FetchAll()
+var_dump($returned->FetchAll());

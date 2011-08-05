@@ -1,0 +1,3 @@
+Package PEAR2_DB_Pl2Method release notes for version 0.1.0.
+Support to just Psql PDO Driver
+without type validation yet
