@@ -40,8 +40,8 @@ var_dump($returned-&gt;FetchAll());
   <email>ivo@o8o.com.br</email>
   <active>yes</active>
  </lead>
- <date>2011-08-05</date>
- <time>18:18:33</time>
+ <date>2011-08-06</date>
+ <time>01:42:36</time>
  <version>
   <release>0.1.0</release>
   <api>0.1.0</api>
