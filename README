@@ -1,4 +1,4 @@
-This package was port to PEAR2 to add the benefits of good distribution and great enviroment.
+Library for accessing stored procedures as PHP Method
 
 This package make stored procedures from PostgreSQL and others SGDB
 can used as PHP Methods.
