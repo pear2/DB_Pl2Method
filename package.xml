@@ -29,12 +29,6 @@ var_dump( $returned );
 var_dump($returned-&gt;FetchAll());
 </description>
  <lead>
-  <name>Your Name</name>
-  <user>handle</user>
-  <email>handle@php.net</email>
-  <active>yes</active>
- </lead>
- <lead>
   <name>Ivo Nascimento</name>
   <user>ivonascimento</user>
   <email>ivo@o8o.com.br</email>
