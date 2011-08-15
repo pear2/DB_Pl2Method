@@ -35,9 +35,15 @@ class Pl2Method
 	 * @param PDO $conn
 	 * @return SGDBDriver
 	 * @access Private
+	 * @throws \PEAR2\DB\Pl2Method\Exception
 	 */
 	private static function getDriverInstance(\PDO $conn){
 		$driverName = "\\PEAR2\\DB\\Pl2Method\\Driver\\".ucfirst($conn->getAttribute( \PDO::ATTR_DRIVER_NAME));
-		return New $driverName($conn);
+		try{
+			$driver = New $driverName($conn);
+		}catch(ErrorException $E){
+			throw PEAR2\DB\Pl2Method\Exception::unsupportedDriver($driverName);
+		}
+		return $driver;
 	}
 }

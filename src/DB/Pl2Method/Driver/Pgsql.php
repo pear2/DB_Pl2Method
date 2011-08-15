@@ -60,6 +60,8 @@ class Pgsql extends \PEAR2\DB\Pl2Method\SGDBDriver
   {
 	$sqlpl ="select * from {$this->SCHEMA}.$spname ( {$paramstr});";
     $this->statment = $this->conn->query($sqlpl);
+    if (!$this->statment)
+    	throw \PEAR2\DB\Pl2Method\Exception::notFoundSP( $spname);
     return $this->statment;
   }
   private function checkParam($fct, $values)
