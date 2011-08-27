@@ -74,10 +74,10 @@ class Pgsql extends \PEAR2\DB\Pl2Method\SGDBDriver
     * @return string list to composite the sql query string
     * @access public
     */
-    private function specParam(Array $P)
+    private function specParam(Array $Params)
     {
         $retorno = Array();
-        foreach ($P as $idx => $param) {
+        foreach ($Params as $param) {
             $nvalue = $this->formatValue($param);
             $retorno[]= $nvalue;
         }
