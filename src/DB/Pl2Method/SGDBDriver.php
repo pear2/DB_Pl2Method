@@ -12,6 +12,7 @@
  * @version   SVN: $Id$
  * @link      http://svn.php.net/repository/pear2/PEAR2_DATABASE_Pl2Method
  */
+ namespace PEAR2\DB\Pl2Method;
 
 /**
  * SGDBDriver class
@@ -23,12 +24,24 @@
  * @license   http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @link      http://svn.php.net/repository/pear2/PEAR2_DATABASE_Pl2Method
  */
-namespace PEAR2\DB\Pl2Method;
 abstract class SGDBDriver
 {
-	protected $conn;
-	public function __construct(\PDO $conn)
-	{
-		$this->conn = $conn;
-	}
+    /**
+    * the PDO connection
+    * @var PDOConnection $conn
+    */
+    protected $conn;
+
+    /**
+    * construct the driver and set the connection
+    * 
+    * @param PDO $conn the pdo
+    *
+    * @access public
+    * @return void
+    */
+    public function __construct(\PDO $conn)
+    {
+        $this->conn = $conn;
+    }
 }

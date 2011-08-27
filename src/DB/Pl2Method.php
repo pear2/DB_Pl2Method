@@ -12,6 +12,7 @@
  * @version   SVN: $Id$
  * @link      http://svn.php.net/repository/pear2/PEAR2_DATABASE_Pl2Method
  */
+ namespace PEAR2\DB\Pl2Method;
 
 /**
  * Main class for PEAR2_DATABASE_Pl2Method
@@ -23,27 +24,38 @@
  * @license   http://www.opensource.org/licenses/bsd-license.php New BSD License
  * @link      http://svn.php.net/repository/pear2/PEAR2_DATABASE_Pl2Method
  */
-namespace PEAR2\DB\Pl2Method;
 class Pl2Method
 {
-	public static function getInstance(\PDO $conn){
-		return self::getDriverInstance($conn);
-	}
-	/**
-	 *
-	 * Enter description here ...
-	 * @param PDO $conn
-	 * @return SGDBDriver
-	 * @access Private
-	 * @throws \PEAR2\DB\Pl2Method\Exception
-	 */
-	private static function getDriverInstance(\PDO $conn){
-		$driverName = "\\PEAR2\\DB\\Pl2Method\\Driver\\".ucfirst($conn->getAttribute( \PDO::ATTR_DRIVER_NAME));
-		try{
-			$driver = New $driverName($conn);
-		}catch(ErrorException $E){
-			throw PEAR2\DB\Pl2Method\Exception::unsupportedDriver($driverName);
-		}
-		return $driver;
-	}
+    /**
+    * return the PL instance to pdo connection
+    *
+    * @param PDO $conn the PDO instance
+    *
+    * @return \PEAR2\DB\Pl2Method\SGDBDriver the instance of a driver
+    * @access public
+    */
+    public static function getInstance(\PDO $conn) 
+    {
+        return self::getDriverInstance($conn);
+    }
+    /**
+     * the Strategy definer
+     *
+     * @param PDO $conn the instance of PDO
+     *
+     * @return SGDBDriver
+     * @access Private
+     * @throws \PEAR2\DB\Pl2Method\Exception
+     */
+    private static function getDriverInstance(\PDO $conn)
+    {
+        $drivername = ucfirst($conn->getAttribute(\PDO::ATTR_DRIVER_NAME));
+        $driverName = "\\PEAR2\\DB\\Pl2Method\\Driver\\".$drivername);
+        try{
+            $driver = New $driverName($conn);
+        }catch(ErrorException $E){
+            throw PEAR2\DB\Pl2Method\Exception::unsupportedDriver($driverName);
+        }
+        return $driver;
+    }
 }
