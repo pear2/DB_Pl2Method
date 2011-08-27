@@ -1,5 +1,6 @@
 <?php
 include_once '../src/DB/Pl2method.php';
+include_once '../src/DB/Pl2method/Exception.php';
 include_once '../src/DB/Pl2Method/SGDBDriver.php';
 include_once '../src/DB/Pl2Method/SGDBInterface.php';
 include_once '../src/DB/Pl2Method/Driver/Pgsql.php';
@@ -18,11 +19,11 @@ error_reporting(E_ALL);
 	select * from public.teste();
  *
  */
-
+$m = new PDO("mysql:host=127.0.0.1");
 $a =  new PDO("pgsql:host=localhost;port=5432;dbname=artigo;user=postgres;password=root");
 $pl2method = \PEAR2\DB\Pl2Method\Pl2Method::getInstance($a);
 // here you have a PDOStatement
-$returned = $pl2method->public->teste();
+$returned = $pl2method->public->teste_();
 var_dump( $returned );
 // You can FetchAll()
 var_dump($returned->FetchAll());
