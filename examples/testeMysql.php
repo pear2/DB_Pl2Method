@@ -14,7 +14,7 @@ error_reporting(E_ALL);
      -> select 1+1;
      -> end $$ delimiter;
      
-	call test.teste();
+    call test.teste();
  *
  */
 $m = new PDO("mysql:host=127.0.0.1; dbname=test", "root", "mysql");

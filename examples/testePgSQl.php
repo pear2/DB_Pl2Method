@@ -9,14 +9,14 @@ error_reporting(E_ALL);
  * For this examples I use a Database Called artigo
  * and create these Stored Procedure
   create or replace function teste() returns varchar(10) as
-	$$
-	begin
-	return 'teste';
-	end;
-	$$
-	language 'plpgsql';
+    $$
+    begin
+    return 'teste';
+    end;
+    $$
+    language 'plpgsql';
 
-	select * from public.teste();
+    select * from public.teste();
  *
  */
 $m = new PDO("mysql:host=127.0.0.1");
