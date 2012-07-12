@@ -1,6 +1,6 @@
 <?php
-include_once '../src/DB/Pl2method.php';
-include_once '../src/DB/Pl2method/Exception.php';
+include_once '../src/DB/Pl2Method.php';
+include_once '../src/DB/Pl2Method/Exception.php';
 include_once '../src/DB/Pl2Method/SGDBDriver.php';
 include_once '../src/DB/Pl2Method/SGDBInterface.php';
 include_once '../src/DB/Pl2Method/Driver/Mysql.php';
@@ -20,7 +20,7 @@ error_reporting(E_ALL);
 $m = new PDO("mysql:host=127.0.0.1; dbname=test", "root", "mysql");
 $pl2method = \PEAR2\DB\Pl2Method\Pl2Method::getInstance($m);
 // here you have a PDOStatement
-$returned = $pl2method->test->teste_();
+$returned = $pl2method->pear2->teste();
 var_dump( $returned );
 // You can FetchAll()
 var_dump($returned->FetchAll());
