@@ -50,7 +50,7 @@ class Pl2Method
     private static function getDriverInstance(\PDO $conn)
     {
         $drivername = ucfirst($conn->getAttribute(\PDO::ATTR_DRIVER_NAME));
-        $driverName = "\\PEAR2\\DB\\Pl2Method\\Driver\\".$drivername);
+        $driverName = "\\PEAR2\\DB\\Pl2Method\\Driver\\".$drivername;
         try{
             $driver = New $driverName($conn);
         }catch(ErrorException $E){
