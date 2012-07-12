@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 Library for accessing stored procedures as PHP Method
-=======
-Library for accessing PostgreSQL stored procedures
->>>>>>> 8d70a572eacafe5ff73da999c311b1573ba9c125
 
 This package make stored procedures from PostgreSQL and others SGDB
 can used as PHP Methods.
